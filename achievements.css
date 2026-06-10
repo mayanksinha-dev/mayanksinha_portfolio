@@ -1,0 +1,967 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#F8F4E8;
+    --text:#111;
+
+    --red:#FF6B6B;
+    --blue:#7FB5FF;
+    --green:#95E1A3;
+    --yellow:#FFE66D;
+    --orange:#FFB84D;
+    --purple:#CDB4FF;
+
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+    position:relative;
+
+}
+
+/* =====================================
+   BLOBS
+===================================== */
+
+.bg-blob{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.25;
+
+    z-index:-1;
+
+}
+
+.red{
+
+    width:350px;
+    height:350px;
+
+    background:var(--red);
+
+    top:-100px;
+    left:-100px;
+
+}
+
+.blue{
+
+    width:300px;
+    height:300px;
+
+    background:var(--blue);
+
+    right:-100px;
+    top:30%;
+
+}
+
+.green{
+
+    width:350px;
+    height:350px;
+
+    background:var(--green);
+
+    bottom:-100px;
+    left:40%;
+
+}
+
+/* =====================================
+   TOPBAR
+===================================== */
+
+.topbar{
+
+    width:min(1200px,92%);
+
+    margin:auto;
+
+    padding:30px 0;
+
+}
+
+.back-btn{
+
+    text-decoration:none;
+
+    color:#111;
+
+    background:white;
+
+    padding:14px 24px;
+
+    border-radius:999px;
+
+    border:3px solid #111;
+
+    font-weight:800;
+
+    box-shadow:
+    6px 6px 0 #111;
+
+    transition:.3s;
+
+}
+
+.back-btn:hover{
+
+    transform:
+    translateY(-4px);
+
+}
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero{
+
+    width:min(1100px,92%);
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:
+    40px 0
+    80px;
+
+}
+
+.tag{
+
+    display:inline-block;
+
+    padding:
+    12px 20px;
+
+    background:white;
+
+    border:3px solid #111;
+
+    border-radius:999px;
+
+    font-weight:800;
+
+    box-shadow:
+    5px 5px 0 #111;
+
+    margin-bottom:25px;
+
+}
+
+.hero h1{
+
+    font-size:
+    clamp(4rem,10vw,8rem);
+
+    font-weight:900;
+
+    line-height:.9;
+
+    letter-spacing:-4px;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#555;
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+}
+
+/* =====================================
+   FILTERS
+===================================== */
+
+.filters{
+
+    width:min(1200px,92%);
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-bottom:60px;
+
+}
+
+.filters button{
+
+    border:none;
+
+    background:white;
+
+    padding:
+    14px 22px;
+
+    border-radius:999px;
+
+    border:3px solid #111;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:
+    5px 5px 0 #111;
+
+    transition:.3s;
+
+}
+
+.filters button:hover{
+
+    transform:
+    translateY(-4px);
+
+}
+
+.filters .active{
+
+    background:var(--yellow);
+
+}
+
+/* =====================================
+   PLAYGROUND
+===================================== */
+
+.playground{
+
+    width:min(1500px,95%);
+
+    margin:auto;
+
+    columns:4;
+
+    column-gap:25px;
+
+    padding-bottom:120px;
+
+}
+
+/* =====================================
+   CARDS
+===================================== */
+
+.card{
+
+    display:inline-block;
+
+    width:100%;
+
+    margin-bottom:25px;
+
+    background:white;
+
+    border:3px solid #111;
+
+    border-radius:26px;
+
+    overflow:hidden;
+
+    box-shadow:
+    10px 10px 0 #111;
+
+    break-inside:avoid;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+/* random rotation */
+
+.card:nth-child(odd){
+
+    transform:rotate(-1.5deg);
+
+}
+
+.card:nth-child(even){
+
+    transform:rotate(1.5deg);
+
+}
+
+.card:hover{
+
+    transform:
+    translateY(-10px)
+    rotate(0deg);
+
+    box-shadow:
+    16px 16px 0 #111;
+
+}
+
+/* =====================================
+   IMAGES
+===================================== */
+
+.card img{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+    background:white;
+
+}
+
+/* =====================================
+   INFO
+===================================== */
+
+.info{
+
+    padding:20px;
+
+}
+
+.info h3{
+
+    font-size:1.05rem;
+
+    font-weight:800;
+
+    margin-bottom:12px;
+
+}
+
+.info span{
+
+    display:inline-block;
+
+    padding:
+    8px 14px;
+
+    border-radius:999px;
+
+    border:2px solid #111;
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    background:#fff;
+
+}
+
+/* =====================================
+   LIGHTBOX
+===================================== */
+
+.lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.9);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:9999;
+
+}
+
+.lightbox.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.lightbox img{
+
+    width:min(90vw,1200px);
+
+    max-height:90vh;
+
+    object-fit:contain;
+
+    border-radius:20px;
+
+}
+
+.close-lightbox{
+
+    position:absolute;
+
+    top:30px;
+    right:40px;
+
+    color:white;
+
+    font-size:3rem;
+
+    cursor:pointer;
+
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media(max-width:1200px){
+
+.playground{
+
+    columns:3;
+
+}
+
+}
+
+@media(max-width:900px){
+
+.playground{
+
+    columns:2;
+
+}
+
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:768px){
+
+.hero h1{
+
+    font-size:4rem;
+
+}
+
+.hero p{
+
+    font-size:1rem;
+
+}
+
+.playground{
+
+    columns:1;
+
+    width:92%;
+
+}
+
+.card{
+
+    transform:none !important;
+
+}
+
+.card:hover{
+
+    transform:none !important;
+
+}
+
+.filters{
+
+    justify-content:flex-start;
+
+    overflow-x:auto;
+
+    flex-wrap:nowrap;
+
+    padding-bottom:10px;
+
+}
+
+.filters::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+}
+/* =====================================
+   SAFE PAGE REVEAL
+===================================== */
+
+.hero,
+.filters,
+.playground{
+
+    opacity:0;
+
+}
+
+.loaded .hero{
+
+    opacity:1;
+
+    transition:opacity .6s ease;
+
+}
+
+.loaded .filters{
+
+    opacity:1;
+
+    transition:opacity .6s ease .15s;
+
+}
+
+.loaded .playground{
+
+    opacity:1;
+
+    transition:opacity .6s ease .3s;
+
+}
+/* =========================================
+   MOBILE FIXES
+========================================= */
+
+@media (max-width:768px){
+
+/* Hero */
+
+.hero{
+
+    padding:20px 0 50px;
+
+}
+
+.hero h1{
+
+    font-size:3.2rem;
+
+    line-height:.95;
+
+    letter-spacing:-2px;
+
+}
+
+.hero p{
+
+    font-size:.95rem;
+
+    line-height:1.6;
+
+    width:90%;
+
+}
+
+/* Tag */
+
+.tag{
+
+    padding:10px 16px;
+
+    font-size:.8rem;
+
+}
+
+/* Back Button */
+
+.topbar{
+
+    padding:20px 0;
+
+}
+
+.back-btn{
+
+    font-size:.85rem;
+
+    padding:12px 18px;
+
+}
+
+/* Filters */
+
+.filters{
+
+    display:flex;
+
+    overflow-x:auto;
+
+    flex-wrap:nowrap;
+
+    justify-content:flex-start;
+
+    gap:12px;
+
+    padding:0 4% 10px;
+
+    margin-bottom:35px;
+
+    scrollbar-width:none;
+
+}
+
+.filters::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.filters button{
+
+    flex-shrink:0;
+
+    padding:12px 18px;
+
+    font-size:.85rem;
+
+}
+
+/* Gallery */
+
+.playground{
+
+    width:92%;
+
+    columns:1 !important;
+
+    column-gap:0;
+
+    padding-bottom:80px;
+
+}
+
+/* Cards */
+
+.card{
+
+    width:100%;
+
+    margin-bottom:22px;
+
+    transform:none !important;
+
+    box-shadow:
+    6px 6px 0 #111;
+
+}
+
+.card:hover{
+
+    transform:none !important;
+
+}
+
+/* Images */
+
+.card img{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+}
+
+/* Info */
+
+.info{
+
+    padding:16px;
+
+}
+
+.info h3{
+
+    font-size:1rem;
+
+    line-height:1.4;
+
+}
+
+.info-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-top:12px;
+
+}
+
+.info-tags span{
+
+    font-size:.75rem;
+
+    padding:6px 12px;
+
+}
+
+/* Disable desktop cursor */
+
+.cursor,
+.cursor-label{
+
+    display:none !important;
+
+}
+
+/* Disable mouse glow */
+
+.mouse-glow{
+
+    display:none !important;
+
+}
+
+/* Lightbox */
+
+.lightbox img{
+
+    width:95vw;
+
+    max-height:80vh;
+
+}
+
+/* Background blobs */
+
+.bg-blob{
+
+    opacity:.12;
+
+    filter:blur(80px);
+
+}
+
+/* NOW Widget */
+
+.now-widget{
+
+    display:block;
+
+    width:100%;
+
+    max-width:320px;
+
+    margin:25px auto 0;
+
+}
+
+/* Remove rotations */
+
+.card:nth-child(odd),
+.card:nth-child(even){
+
+    transform:none !important;
+
+}
+
+}
+@media (max-width:768px){
+
+.hero{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+}
+
+.hero h1{
+
+    width:100%;
+
+    text-align:center;
+
+    margin:0 auto 15px;
+
+    font-size:3rem;
+
+    line-height:.95;
+
+}
+
+.hero p{
+
+    text-align:center;
+
+    margin:0 auto;
+
+}
+
+.tag{
+
+    margin:0 auto 20px;
+
+}
+
+}
+.tag{
+
+    background:#FFE66D;
+
+    color:#111;
+
+}
+.hero-btn-achievements{
+
+    background:#95E1A3;
+
+    color:#111;
+
+}
+.filters button.active{
+    color:#111;
+}
+
+.filters button:nth-child(1).active{
+    background:#FFC9C9 ;
+}
+
+.filters button:nth-child(2).active{
+    background:#7FB5FF;
+}
+
+.filters button:nth-child(3).active{
+    background:#0EA5A4
+}
+
+.filters button:nth-child(4).active{
+    background:#D9F99D ;
+}
+
+.filters button:nth-child(5).active{
+    background:#FFB84D;
+}
+
+.filters button:nth-child(6).active{
+    background:#CDB4FF;
+}
+
+.filters button:nth-child(7).active{
+    background:#FFAFCC;
+}
+
+.filters button:nth-child(8).active{
+    background:#FF6B6B;
+}
+
+.filters button:nth-child(9).active{
+    background:#87EAF2;
+}
+@media(max-width:768px){
+
+.filters{
+
+    padding:
+    12px 16px 18px;
+
+    overflow-x:auto;
+
+    overflow-y:visible;
+
+    align-items:center;
+
+}
+
+.filters button{
+
+    flex-shrink:0;
+
+    margin-top:8px;
+
+}
+
+}
+/* =========================================
+   GRID BACKGROUND
+========================================= */
+
+.grid-bg{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-20;
+
+    background-image:
+
+    linear-gradient(
+    rgba(0,0,0,.05) 1px,
+    transparent 1px),
+
+    linear-gradient(
+    90deg,
+    rgba(0,0,0,.05) 1px,
+    transparent 1px);
+
+    background-size:
+    40px 40px;
+
+    pointer-events:none;
+
+}
